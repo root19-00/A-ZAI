@@ -107,8 +107,8 @@
 <input type="text" id="street" placeholder="Straatnaam *">
 
 <div style="display:flex; gap:10px;">
-    <input type="text" id="houseNumber" placeholder="Huisnummer *">
     <input type="text" id="postcode" placeholder="Postcode *">
+    <input type="text" id="houseNumber" placeholder="Huisnummer *">
 </div>
 <input type="text" id="city" placeholder="Woonplaats *">
     <button onclick="submitForm()">Verzenden</button>
@@ -137,11 +137,11 @@
         window.submitForm = function () {
 const name = document.getElementById("name").value.trim();            
 const street = document.getElementById("street").value.trim();
-const houseNumber = document.getElementById("houseNumber").value.trim();
 const postcode = document.getElementById("postcode").value.trim();
+const houseNumber = document.getElementById("houseNumber").value.trim();
 const city = document.getElementById("city").value.trim();
 
-if (!name || !street || !houseNumber || !postcode || !city) {
+if (!name || !street || !postcode || !houseNumber || !city) {
     alert("Vul alle verplichte velden in.");
     return;
 }
@@ -149,8 +149,8 @@ if (!name || !street || !houseNumber || !postcode || !city) {
             push(ref(db, "submissions/"), {
     name,
     street,
-    houseNumber,
     postcode,
+    houseNumber,
     city,
     timestamp: new Date().toISOString()
 })
@@ -170,6 +170,10 @@ if (!name || !street || !houseNumber || !postcode || !city) {
 
 <p>
     Uw verrassing is onderweg.
+</p>
+
+<p>
+    Vergeet niet uw glimlach te bewaren 😉
 </p>
 
 <p class="signature">
