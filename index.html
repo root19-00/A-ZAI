@@ -137,19 +137,23 @@
         }
 
 
-        .hidden {
-            display: none;
-        }
+/* ===============================
+VIDEO
+================================ */
 
-        #main-video {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 93%;
-            height: 100%;
-            object-fit: cover; /* تم التغيير إلى cover لتكبير الفيديو وإخفاء الحواف السوداء */
-            background: #000;
-        }
+.hidden{
+    display:none;
+}
+
+#main-video{
+    position:fixed;
+    inset:0;
+    width:100vw;
+    height:100vh;
+    object-fit:contain;
+    background:#000;
+    z-index:1;
+}
 
 
         /* ==================================
