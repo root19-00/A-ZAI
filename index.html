@@ -1,104 +1,391 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>THE BROTHERHOOD</title>
-    <style>
-        body { 
-            margin: 0; 
-            background-color: #000; 
-            overflow: hidden; 
-            font-family: 'Courier New', monospace;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        #landing-screen {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background: #000;
-            transition: opacity 1.5s ease;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 10;
-        }
+<title>THE BROTHERHOOD</title>
 
-        .title {
-            color: #333;
-            letter-spacing: 10px;
-            margin-bottom: 30px;
-            text-transform: uppercase;
-        }
+<style>
 
-        #enter-btn {
-            background: transparent;
-            border: 1px solid #222;
-            color: #444;
-            padding: 10px 30px;
-            cursor: pointer;
-            text-transform: uppercase;
-            transition: 0.5s;
-            font-size: 1rem;
-        }
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&display=swap');
 
-        #enter-btn:hover {
-            border-color: #fff;
-            color: #fff;
-            box-shadow: 0 0 15px rgba(255,255,255,0.2);
-        }
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
 
-        .hidden { display: none; }
+html,body{
+    width:100%;
+    height:100%;
+    overflow:hidden;
+    background:#000;
+    font-family:'Orbitron',sans-serif;
+}
 
-        #main-video {
-            width: 100vw; 
-            height: 100vh;
-            object-fit: cover;
-            position: fixed;
-            top: 0;
-            left: 0;
-        }
-    </style>
+/* ===============================
+BACKGROUND
+================================ */
+
+body{
+
+background:
+radial-gradient(circle at center,#111 0%,#050505 55%,#000 100%);
+
+}
+
+/* ===============================
+LANDING SCREEN
+================================ */
+
+#landing-screen{
+
+position:fixed;
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+z-index:100;
+
+transition:2s;
+
+}
+
+/* Glow */
+
+#landing-screen::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+height:600px;
+
+background:
+radial-gradient(circle,
+rgba(255,255,255,.08),
+transparent 70%);
+
+animation:pulse 6s infinite;
+
+}
+
+@keyframes pulse{
+
+0%{
+transform:scale(.8);
+opacity:.2;
+}
+
+50%{
+transform:scale(1.1);
+opacity:.5;
+}
+
+100%{
+transform:scale(.8);
+opacity:.2;
+}
+
+}
+
+.content{
+
+position:relative;
+
+text-align:center;
+
+padding:60px;
+
+border:1px solid rgba(255,255,255,.08);
+
+background:rgba(255,255,255,.03);
+
+backdrop-filter:blur(12px);
+
+border-radius:18px;
+
+box-shadow:
+
+0 0 80px rgba(255,255,255,.04),
+
+inset 0 0 40px rgba(255,255,255,.03);
+
+}
+
+/* ==================================
+TITLE
+================================== */
+
+.title{
+
+font-size:72px;
+
+font-weight:800;
+
+color:white;
+
+letter-spacing:15px;
+
+text-transform:uppercase;
+
+margin-bottom:25px;
+
+text-shadow:
+
+0 0 10px rgba(255,255,255,.2),
+0 0 35px rgba(255,255,255,.08);
+
+animation:titleGlow 3s infinite alternate;
+
+}
+
+@keyframes titleGlow{
+
+from{
+
+text-shadow:
+0 0 8px rgba(255,255,255,.15);
+
+}
+
+to{
+
+text-shadow:
+0 0 18px rgba(255,255,255,.4),
+0 0 40px rgba(255,255,255,.15);
+
+}
+
+}
+
+.subtitle{
+
+color:#888;
+
+font-size:14px;
+
+letter-spacing:10px;
+
+margin-bottom:50px;
+
+}
+
+/* ==================================
+BUTTON
+================================== */
+
+#enter-btn{
+
+width:240px;
+height:65px;
+
+border-radius:50px;
+
+border:1px solid rgba(255,255,255,.25);
+
+background:rgba(255,255,255,.05);
+
+color:white;
+
+font-size:17px;
+
+letter-spacing:5px;
+
+font-weight:bold;
+
+cursor:pointer;
+
+transition:.4s;
+
+backdrop-filter:blur(10px);
+
+}
+
+#enter-btn:hover{
+
+transform:translateY(-4px) scale(1.05);
+
+background:white;
+
+color:black;
+
+box-shadow:
+
+0 0 35px rgba(255,255,255,.5);
+
+}
+
+#enter-btn:active{
+
+transform:scale(.95);
+
+}
+
+/* ==================================
+VIDEO
+================================== */
+
+.hidden{
+
+display:none;
+
+}
+
+#main-video{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+
+}
+
+/* ==================================
+Particles
+================================== */
+
+.particle{
+
+position:absolute;
+
+background:white;
+
+border-radius:50%;
+
+opacity:.2;
+
+animation:float linear infinite;
+
+}
+
+@keyframes float{
+
+from{
+
+transform:translateY(100vh);
+
+}
+
+to{
+
+transform:translateY(-120vh);
+
+}
+
+}
+
+</style>
+
 </head>
+
 <body>
 
-    <div id="landing-screen">
-        <div class="content">
-            <h1 class="title">Only Brother</h1>
-            <button id="enter-btn">ACCESS</button>
-        </div>
-    </div>
+<div id="landing-screen">
 
-    <video id="main-video" class="hidden" playsinline>
-        <source src="assets/video/your-video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
+<div class="content">
 
-    <script>
-        const btn = document.getElementById('enter-btn');
-        const landing = document.getElementById('landing-screen');
-        const video = document.getElementById('main-video');
+<h1 class="title">
+THE BROTHERHOOD
+</h1>
 
-        btn.addEventListener('click', () => {
-            landing.style.opacity = '0';
-            
-            setTimeout(() => {
-                landing.style.display = 'none';
-                video.classList.remove('hidden');
-                video.play(); 
-                video.volume = 0;
-                let fadeAudio = setInterval(() => {
-                    if (video.volume < 0.9) {
-                        video.volume += 0.1;
-                    } else {
-                        video.volume = 1;
-                        clearInterval(fadeAudio);
-                    }
-                }, 200);
-            }, 1500);
-        });
-    </script>
+<div class="subtitle">
+WELCOME TO THE INNER CIRCLE
+</div>
+
+<button id="enter-btn">
+ACCESS
+</button>
+
+</div>
+
+</div>
+
+<video id="main-video" class="hidden" playsinline>
+
+<source src="Yuyu.mov" type="video/quicktime">
+
+</video>
+
+<script>
+
+const btn=document.getElementById("enter-btn");
+const landing=document.getElementById("landing-screen");
+const video=document.getElementById("main-video");
+
+/* Floating Particles */
+
+for(let i=0;i<60;i++){
+
+const p=document.createElement("div");
+
+p.className="particle";
+
+let s=Math.random()*3+1;
+
+p.style.width=s+"px";
+p.style.height=s+"px";
+
+p.style.left=Math.random()*100+"%";
+
+p.style.animationDuration=(Math.random()*10+8)+"s";
+
+p.style.animationDelay=Math.random()*8+"s";
+
+document.body.appendChild(p);
+
+}
+
+/* Enter */
+
+btn.onclick=()=>{
+
+landing.style.opacity="0";
+
+setTimeout(()=>{
+
+landing.style.display="none";
+
+video.classList.remove("hidden");
+
+video.volume=0;
+
+video.play();
+
+let fade=setInterval(()=>{
+
+if(video.volume<0.95){
+
+video.volume+=0.05;
+
+}else{
+
+video.volume=1;
+
+clearInterval(fade);
+
+}
+
+},150);
+
+},1800);
+
+};
+
+</script>
+
 </body>
 </html>
