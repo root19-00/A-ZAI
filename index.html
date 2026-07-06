@@ -43,14 +43,14 @@
             align-items: center;
             z-index: 100;
             transition: 2s;
-            padding: 20px; /* يمنع المحتوى من الالتصاق بحواف الهاتف */
+            padding: 20px; 
         }
 
         /* Glow */
         #landing-screen::before {
             content: "";
             position: absolute;
-            width: 80vmin; /* حجم يتكيف مع الشاشة */
+            width: 80vmin; 
             height: 80vmin;
             max-width: 600px;
             max-height: 600px;
@@ -136,9 +136,7 @@
             transform: scale(.95);
         }
 
-        /* ==================================
-           VIDEO
-        ================================== */
+
         .hidden {
             display: none;
         }
@@ -149,9 +147,10 @@
             left: 0;
             width: 100%;
             height: 100%;
-            object-fit: contain; 
+            object-fit: cover; /* تم التغيير إلى cover لتكبير الفيديو وإخفاء الحواف السوداء */
             background: #000;
         }
+
 
         /* ==================================
            Particles
@@ -175,8 +174,8 @@
 
     <div id="landing-screen">
         <div class="content">
-            <h1 class="title">THE BROTHERHOOD</h1>
-            <div class="subtitle">WELCOME TO THE INNER CIRCLE</div>
+            <h1 class="title">BROTHERHOOD</h1>
+            <div class="subtitle">WELCOME TO THE SHADOW ROOM</div>
             <button id="enter-btn">ACCESS</button>
         </div>
     </div>
