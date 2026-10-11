@@ -9,7 +9,7 @@ import pyautogui
 import threading
 from io import BytesIO
 
-DB_BASE_URL = "https://a0zai-56c3a-default-rtdb.europe.west1.firebasedatabase.app-A0Z_CORE"
+DB_BASE_URL = "https://a0zai-56c3a-default-rtdb.europe-west1.firebasedatabase.app/A0Z_CORE"
 STATE_URL = f"{DB_BASE_URL}/game_state.json"
 CMD_URL = f"{DB_BASE_URL}/current_command.json"
 
